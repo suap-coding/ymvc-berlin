@@ -35,7 +35,7 @@ webpages = []
 for response in responses:
     webpages.append(BeautifulSoup(response.content, 'html.parser'))
 
-print(len(soups), "Should be 24 for restaurants")
+print(len(webpages), "Should be 24 for restaurants")
 
 # Class to get hrefs
 span_class = "css-1pxmz4g"
