@@ -57,4 +57,4 @@ df = pd.DataFrame({f"{businesses[0]}_name".title(): names, "url": child_urls})
 
 print(df.shape, "Should be (240,2)")
 
-df.to_csv('yelp_dataset.csv')
+df.to_csv('yelp_dataset.csv', index = False)
