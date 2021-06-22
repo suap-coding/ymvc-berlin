@@ -1,6 +1,7 @@
 # ymvc-berlin
 Build Week1 Project: YM Venture Capital - Berlin
 
-PM: Francisco
-GitMaster: Bartosz
-Amazing Developers: Rajat, Mateo
+Project Manager: Francisco
+Software and Data Consultant: Bartosz
+Scraping Guru: Rajat
+Visual Effects Expert: Mateo
