@@ -102,7 +102,8 @@ for session, session_range in tqdm(enumerate(sessions)):
 
         df.loc[index, 'hours'] = str(hours)
 
-        Categories
+        # Categories
+        
         categories_elements = soup.findAll('span', class_ = categories_class)
 
         categories = []
