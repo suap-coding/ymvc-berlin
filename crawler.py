@@ -9,7 +9,7 @@ from tqdm import tqdm
 # Reference: https://jasonfavrod.com/writing-web-scraped-html-to-a-file/
 
 df = pd.read_csv('yelp_dataset.csv')
-total_webpages = range(65,73)
+total_webpages = range(80,89)
 n = 3
 sessions = [total_webpages[i:i+n] for i in range(0, len(total_webpages), n)]
 
