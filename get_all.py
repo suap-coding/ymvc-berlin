@@ -1,3 +1,11 @@
+import pandas as pd
+import numpy as np
+from bs4 import BeautifulSoup
+import requests
+import time
+import re
+from tqdm import tqdm
+
 photos_class = "css-ardur"
 stars_class = "i-stars__373c0__1T6rz i-stars--large-4-half__373c0__2lYkD border-color--default__373c0__30oMI overflow--hidden__373c0__2B0kz"
 reviews_class =  "arrange-unit__373c0__1piwO arrange-unit-fill__373c0__17z0h border-color--default__373c0__2oFDT nowrap__373c0__1_N1j"
@@ -8,10 +16,10 @@ stars_class = "display--inline__373c0__2SfH_ border-color--default__373c0__30oMI
 categories_class = "css-bq71j2" 
 attributes_outer_div = "arrange__373c0__UHqhV gutter-2__373c0__3Zpeq layout-wrap__373c0__34d4b layout-2-units__373c0__3CiAk border-color--default__373c0__2oFDT"
 
-
+df = pd.read_csv('yelp_dataset.csv')
 days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
 
-total_webpages = range(8,241)
+total_webpages = range(68,241)
 n = 8
 sessions = [total_webpages[i:i+n] for i in range(0, len(total_webpages), n)]
 
@@ -103,7 +111,6 @@ for session, session_range in tqdm(enumerate(sessions)):
         df.loc[index, 'hours'] = str(hours)
 
         # Categories
-        
         categories_elements = soup.findAll('span', class_ = categories_class)
 
         categories = []
