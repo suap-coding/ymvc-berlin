@@ -106,7 +106,7 @@ for session, session_range in tqdm(enumerate(sessions)):
                 times.append(row.findAll('p', class_ = time_class)[0].text)
 
         
-        hours = {day:time for day in days for time in times}
+        hours = {day:time for day,time in zip(days,times)}
 
         df.loc[index, 'hours'] = str(hours)
 
