@@ -57,8 +57,10 @@ def get_urls(business):
         items = webpage.findAll('span', class_ = span_class)
         
         for item in items:
-            names.append(regex.sub('', item.text))
-            child_urls.append(f"https://www.yelp.co.uk{item.find('a')['href']}")
+
+            if item.find('a') != None:
+                names.append(regex.sub('', item.text))
+                child_urls.append(f"https://www.yelp.co.uk{item.find('a')['href']}")
 
     df = pd.DataFrame({"restaurants_name".title(): names, "url": child_urls})
     
