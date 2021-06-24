@@ -19,7 +19,7 @@ attributes_outer_div = "arrange__373c0__UHqhV gutter-2__373c0__3Zpeq layout-wrap
 df = pd.read_csv('yelp_dataset.csv')
 days = ['Monday','Tuesday','Wednesday','Thursday','Friday']
 
-total_webpages = range(68,241)
+total_webpages = range(160,241)
 n = 8
 sessions = [total_webpages[i:i+n] for i in range(0, len(total_webpages), n)]
 
@@ -115,7 +115,6 @@ for session, session_range in tqdm(enumerate(sessions)):
 
         categories = []
         for element in categories_elements:
-            category.findAll('a')
 
             for category in element.findAll('a'):
                 categories.append(category.text)
