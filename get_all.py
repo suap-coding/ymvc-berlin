@@ -135,6 +135,14 @@ for session, session_range in tqdm(enumerate(sessions)):
         attributes = ",".join(attributes)
 
         df.loc[index,'attributes'] = attributes
+
+        # Euros
+        euros_class = "css-1xxismk"
+
+        euros_category = soup.findAll('span', class_ = euros_class)
+        euros_category = len(euros_category[0].text.strip())
+
+        df.loc[index,'euros'] = euros_category
         
         # Saving to dataset
         df.to_csv('yelp_dataset.csv', index = False)
