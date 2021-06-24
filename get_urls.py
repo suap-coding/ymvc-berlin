@@ -66,11 +66,11 @@ def get_urls(business):
     
     df.to_csv('yelp_dataset.csv', mode = 'a', index = False, header = False)
 
-# # Order: "reservations" ,"delivery", "burgers", "chinese", "japanese", "mexican", "italian",  "thai",
+# # Order: "reservations" ,"delivery", "burgers", "chinese", "japanese", "mexican", "italian",  "thai", "japanese"
 # # Problem: "japanese", "mexican", "italian",
 
 businesses = [
-             "japanese", "mexican", "italian","thai",
+             "mexican", "italian","thai",
              'autorepair', 'car_dealers', 'auto_detailing', 
              'dryclean', 'hair', 'mobilephonerepair', 'gyms', 'bars', 'massage', 'nightlife', 'shopping'
             ]
