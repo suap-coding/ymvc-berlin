@@ -20,7 +20,7 @@ attributes_outer_div = "arrange__373c0__UHqhV gutter-2__373c0__3Zpeq layout-wrap
 df = pd.read_csv('yelp_dataset.csv')
 days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
-total_webpages = range(191,241)
+total_webpages = range(0,240)
 n = 8
 sessions = [total_webpages[i:i+n] for i in range(0, len(total_webpages), n)]
 
@@ -138,13 +138,15 @@ for session, session_range in enumerate(tqdm(sessions, desc='whole thing ')):
 
             df.loc[index,'attributes'] = attributes
             
-            # Euros
-            euros_class = "css-1xxismk"
+            # euros_class = "css-1xxismk"
+            # # Euros
+            # # euros_class = "css-1xxismk"
+            # euros_class = "display--inline__373c0__1DbOG margin-r1__373c0__zyKmV border-color--default__373c0__2oFDT"
 
-            euros_category = soup.findAll('span', class_ = euros_class)
-            euros_category = len(euros_category[0].text.strip())
+            # euros_category = soup.findAll('span', class_ = euros_class)
+            # euroes_category = euros_category[1].text.strip()
 
-            df.loc[index,'euros'] = euros_category
+            # df.loc[index,'euros'] = euros_category
             
             # Saving to dataset
             df.to_csv('yelp_dataset.csv', index = False)
@@ -154,6 +156,6 @@ for session, session_range in enumerate(tqdm(sessions, desc='whole thing ')):
         small_delay = np.random.randint(40,100) // 2
         for t in trange(small_delay, desc='little sleep', leave=False):
             time.sleep(1)
-    big_delay = np.random.randint(150,1200) // 2
+    big_delay = np.random.randint(150,1200) // 4
     for t in trange(big_delay, desc='big sleep   ', leave=False):
         time.sleep(1)
