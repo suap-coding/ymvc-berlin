@@ -68,7 +68,10 @@ df['name_length'].corr(df['stars'])
 #Number of reviews by category
 
 a = df['categories'].values.tolist()
+<<<<<<< HEAD
 type(a)
+=======
+>>>>>>> exploring-berlin
 b = [x for x in a if str(x) != 'nan']
 c = []
 #for d in b:
