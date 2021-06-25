@@ -20,7 +20,7 @@ attributes_outer_div = "arrange__373c0__UHqhV gutter-2__373c0__3Zpeq layout-wrap
 df = pd.read_csv('yelp_dataset.csv')
 days = ['Monday','Tuesday','Wednesday','Thursday','Friday','Saturday','Sunday']
 
-total_webpages = range(0,240)
+total_webpages = range(1642,df.shape[0]+1)
 n = 8
 sessions = [total_webpages[i:i+n] for i in range(0, len(total_webpages), n)]
 
@@ -156,6 +156,6 @@ for session, session_range in enumerate(tqdm(sessions, desc='whole thing ')):
         small_delay = np.random.randint(40,100) // 2
         for t in trange(small_delay, desc='little sleep', leave=False):
             time.sleep(1)
-    big_delay = np.random.randint(150,1200) // 4
+    big_delay = np.random.randint(150,1200) // 5
     for t in trange(big_delay, desc='big sleep   ', leave=False):
         time.sleep(1)
